@@ -14,8 +14,6 @@ http://leaflet-extras.github.io/leaflet-providers/preview/index.html
 
 var map = L.map('map').fitWorld();
 
-
-
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -23,7 +21,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 /* var Stamen_Watercolor =  */
 /* L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen
+   Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	subdomains: 'abcd',
 	minZoom: 1,
 	maxZoom: 16,
@@ -37,7 +36,7 @@ function onLocationFound(e) {
 	var radius = e.accuracy;
  
 	L.marker(e.latlng, { icon: positionIcon }).addTo(map)
-    	.bindPopup("You are within " + radius + " meters from this point").openPopup();
+    	.bindPopup("You are within " + radius + " meters from Viktor").openPopup();
  
 	L.circle(e.latlng, radius).addTo(map);
 }
@@ -54,30 +53,32 @@ function onLocationError(e) {
  
 map.on('locationerror', onLocationError);
 
+//navigator.geolocation.getCurrentPosition(function(position)
+//var latit = position.coords.latitude;
+//var longit = position.coords.longitude;
+//var marker = L.marker([latit, longit]).addTo(map);
 
-var marker = L.marker([55.659737868153414, 12.591011642104466]).addTo(map);
-
-var circle1 = L.circle([55.66063108668192, 12.590150755598245], {
+/**var circle1 = L.circle([55.66063108668192, 12.590150755598245], {
     color: '#B28DFF',
     fillOpacity: 0.7,
     radius: 50
 }).addTo(map);
 
-var circle = L.circle([55.660804, 12.589695], {
-    color: '#F72FBB',
-    fillOpacity: 0.7,
-    radius: 50
-}).addTo(map);
+
 
 var polygon = L.polygon([
     [55.665493080792494, 12.601643113966672],
     [55.65563856857275, 12.589057187468992],
     [55.662186393726856, 12.61618514548649]], {color: '#FF9CEE',
-    fillOpacity: 0.7}).addTo(map);
+    fillOpacity: 0.7}).addTo(map);*/
 
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-circle.bindPopup("This is Tietgenkollegiet.");
-polygon.bindPopup("This is the triangle of metros at Amager.");
+//marker.bindPopup("<b>Time to rest</b><br>Viktor is currently sleeping.<br> Game starts again when he awakes").openPopup();
+
+var circle = L.circle([55.660804, 12.589695], {
+  color: '#F72FBB',
+  fillOpacity: 0.7,
+  radius: 20
+}).addTo(map);
 
 let iconObject = L.Icon.extend({
     options: {
@@ -86,12 +87,12 @@ let iconObject = L.Icon.extend({
     },
   });
 
-  let visitIcon = new iconObject({ iconUrl: "./icons/vision.png" });
+let visitIcon = new iconObject({ iconUrl: "./icons/vision.png" });
 let positionIcon = new iconObject({ iconUrl: "./icons/location.png" });
 
 
 let visitedArray = [];
-function onMapClick(e) {
+/**function onMapClick(e) {
   visitedArray.push(
 	L.marker(e.latlng, {
   	draggable: true,
@@ -103,8 +104,8 @@ function onMapClick(e) {
   );
   // console logs the array of places the user has marked as visited
   console.log(visitedArray);
-}
+}*/
 // run the onMapClick function when the map is clicked
-map.on("click", onMapClick);
+//map.on("click", onMapClick);
 
 

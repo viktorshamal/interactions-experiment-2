@@ -9,12 +9,14 @@
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="crossorigin=""></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <title>Leaflet Exercise</title>
 </head>
-<body>
-  <div id="map"></div>
+<body class="p-10 max-w-[500px] mx-auto overflow-hidden">
+  <div class="rounded-t p-3 text-center bg-blue-300">You need to find Julie! <br> Eat a croissant with them.</div>
+  <div class="!w-full !max-h-[700px] rounded-b" id="map"></div>
   <script src="mapScript.js"></script>
-
+  
 </body>
 </html>
